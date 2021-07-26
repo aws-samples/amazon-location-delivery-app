@@ -1,0 +1,17 @@
+{
+  "auth": {
+    "deliveryappe0fde1b2": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  },
+  "hosting": {
+    "amplifyhosting": {
+      "service": "amplifyhosting",
+      "type": "cicd",
+      "lastPushTimeStamp": "2021-05-13T20:19:31.498Z"
+    }
+  }
+}
