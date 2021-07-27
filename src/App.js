@@ -221,7 +221,7 @@ const App = () => {
 
   const myRouteCalculator = (long, lat) => {
 
-    var parameter = {
+    let parameter = {
       CalculatorName: routeCalculator,
       DeparturePosition: [long, lat],
       DestinationPosition: [-74.03330326080321, 40.741859668270294]
