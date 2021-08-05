@@ -1,11 +1,23 @@
-## My Project
+## Implementing Estimated Time of Arrival and Proximity Notifications for Delivery using Amazon Location Service
 
-TODO: Fill this README out!
+1. Install node dependencies using `npm install`
 
-Be sure to:
+2. Configure Amplify
 
-* Change the title in this README
-* Edit your repository description on GitHub
+``
+    npm install -g @aws-amplify/cli
+
+    amplify configure
+
+    amplify init
+
+    amplify add auth
+
+    amplify push
+``
+
+3. Start the application using `npm start`
+
 
 ## Security
 
