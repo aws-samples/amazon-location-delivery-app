@@ -233,31 +233,24 @@ const App = () => {
 
         if (deliveryETA < 300 && deliveryETA > 100) {
 
-          let config = new AWS.Config({
-            accessKeyId: process.env.REACT_APP_AWS_ACCESS_KEY_ID,
-            secretAccessKey: process.env.REACT_APP_AWS_SECRET_ACCESS_KEY,
-            region: awsconfig.aws_project_region,
-            apiVersion: '2010-03-31'
-          });
-
           // Create publish parameters
-          let params = {
-            Message: 'ETA is 5 minutes', /* required */
+          var params = {
+            Message: 'ETA is 5 mins',
             TopicArn: process.env.REACT_APP_SNS_TOPIC_ARN
           };
-
+          
           // Create promise and SNS service object
-          let publishTextPromise = new AWS.SNS(config).publish(params).promise();
-
+          var publishTextPromise = new AWS.SNS({credentials}).publish(params).promise();
+          
           // Handle promise's fulfilled/rejected states
           publishTextPromise.then(
-            function (data) {
+            function(data) {
               console.log(`Message ${params.Message} sent to the topic ${params.TopicArn}`);
               console.log("MessageID is " + data.MessageId);
             }).catch(
-              function (err) {
-                console.error(err, err.stack);
-              });
+              function(err) {
+              console.error(err, err.stack);
+            });
         }
       }
     });
